@@ -1,0 +1,43 @@
+body{
+    background-color:pink;
+    margin: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: lime;
+}
+.container h1{
+    text-align: center;
+    font-family: Courier;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    align-items: center;
+}
+#app-container textarea {
+    height: 200px;
+    width: 400px;
+    font-size: 20px;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 5px;
+    padding: 25px;
+}
+t1
+{
+    color:dimgrey;
+    font-size: 60px;
+    font-weight: bold;
+    align-items: center;
+}
+table, th,td {
+    border:1px solid black;
+}

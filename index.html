@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title> Encipher Decipher PA0 Assignment</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Encrypt/Decrypt PA0 Assignment</h1>
+            <p> ENCRYPTION/DECRYPTION LOOKUP TABLE</p>
+            <table style="width:10%"> 
+                <tr>
+                <td>PLAIN TEXT</td> <td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td><td>i</td><td>j</td><td>k</td><td>l</td>
+                  <td>m</td><td>n</td><td>o</td><td>p</td><td>q</td><td>r</td><td>s</td><td>t</td><td>u</td><td>v</td><td>w</td><td>x</td>
+                  <td>y</td><td>z</td>
+                </tr>
+                <tr>
+                    <td>CIPHER TEXT</td> <td>z</td><td>y</td><td>x</td><td>w</td><td>v</td><td>u</td><td>t</td><td>s</td><td>r</td><td>q</td><td>p</td><td>o</td>
+                      <td>n</td><td>m</td><td>l</td><td>k</td><td>j</td><td>i</td><td>h</td><td>g</td><td>f</td><td>e</td><td>d</td><td>c</td>
+                      <td>b</td><td>a</td>
+                </tr>
+              </table>
+              <br>
+
+            <div id="radio">
+                ENCRYPT
+                <input type="radio" id="ecrypt" onclick="ecrypt()" name="crypt">
+                DECRYPT
+                <input type="radio" id="dcrypt" onclick="dcrypt()" name="crypt">
+                <br><br>
+            </div>
+            <div id="titles">
+                <p id="t1"></p>
+            </div>
+            <div id="app-container">
+                <textarea name="" id="text" oninput="getvalue()"></textarea>
+                <textarea name="" id="text1"></textarea>
+            </div>
+
+        </div> 
+
+        <script> 
+        function ecrypt()
+        {
+
+            t1.innerText="ENTER PLAIN TEXT​​​​​​      CORRESPONDING CIPHER TEXT"
+
+        }
+        function dcrypt()
+        {
+
+            t1.innerText="ENTER CIPHER TEXT​​​​​​      CORRESPONDING PLAIN TEXT"
+
+        }
+
+        function getvalue()
+        {
+            newText='';
+            const listletters = ['a','b','c','d','e','f','g','h','i','j','k','l',
+                                 'm','n','o','p','q','r','s','t','u','v','w','x','y','z']
+            
+            const textarea = document.querySelector('#text');
+
+            for (let letter of textarea.value)
+            {
+                letter=letter.toLowerCase();
+                if(letter==" ")
+                newText+=" ";
+                if(!listletters.includes(letter)){
+                        continue}
+                
+            const indexLetter = listletters.findIndex((item) => item ===letter);
+            let indexNewLetter =25-indexLetter;
+            newText+= listletters[indexNewLetter]
+           
+            }
+            let result=document.getElementById("text1");
+            result.innerText=newText;
+        }
+
+        </script>
+    </body>
+</html>
